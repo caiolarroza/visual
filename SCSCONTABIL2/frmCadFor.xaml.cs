@@ -14,7 +14,7 @@ using System.Windows.Shapes;
 using Correios.Net;
 using MySql.Data.MySqlClient;
 using Xceed.Wpf.Toolkit;
-using extensao;
+
 namespace SCSCONTABIL2
 {
     /// <summary>
@@ -311,6 +311,7 @@ namespace SCSCONTABIL2
         }
         private void cadastrar()
         {
+            
             try
             {
                 // abrir conexao BD

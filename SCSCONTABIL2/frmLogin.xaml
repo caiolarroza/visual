@@ -18,7 +18,7 @@
         <Label x:Name="label1" Grid.ColumnSpan="2" Content="SCS - Acessoria Contábil" Margin="286,54,273,147" RenderTransformOrigin="0.497,0.515" FontSize="14.667"/>
         <Label x:Name="label2" Content="Usuário:" Margin="170,131,137,74" RenderTransformOrigin="0.497,0.515" Width="64" Height="29" FontSize="14.667"/>
         <Label x:Name="label3" Content="Senha:" Margin="170,178,137,27" RenderTransformOrigin="0.497,0.515" Width="64" Height="29" FontSize="14.667"/>
-        <TextBox x:Name="txtUsuario" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="30" Margin="258,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="234" TextChanged="textBox_TextChanged"/>
+        <TextBox x:Name="txtUsuario" Grid.ColumnSpan="2" CharacterCasing="Upper" HorizontalAlignment="Left" Height="30" Margin="258,130,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="234" TextChanged="textBox_TextChanged"/>
         <PasswordBox x:Name="txtSenha" Grid.ColumnSpan="2" HorizontalAlignment="Left" Margin="258,178,0,0" Width="234" Foreground="#FF3F3F3F" Height="30" VerticalAlignment="Top" KeyUp="txtSenha_KeyUp"/>
         <Button x:Name="btnEntrar" Content="ENTRAR" Margin="196,45,42,140" Grid.Row="1" Click="btnEntrar_Click"/>
         <Button x:Name="btnSair" Content="SAIR" HorizontalAlignment="Left" Margin="42,45,0,140" Grid.Row="1" Width="134" Grid.Column="1" Click="btnSair_Click"/>

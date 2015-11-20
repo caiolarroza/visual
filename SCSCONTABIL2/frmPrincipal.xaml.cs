@@ -104,5 +104,11 @@ namespace SCSCONTABIL2
             conpro.Show();
             this.Close();
         }
+
+        private void btnSair_Click(object sender, RoutedEventArgs e)
+        {
+            //fecha o programa
+            Application.Current.Shutdown();
+        }
     }
 }
