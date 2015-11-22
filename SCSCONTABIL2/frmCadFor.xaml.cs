@@ -27,29 +27,17 @@ namespace SCSCONTABIL2
         public frmCadFor()
         {
             InitializeComponent();
+            txtRazao.Focus();
+            txtRazao.MaxLength = 40;
+            txtNome.MaxLength = 40;
+            txtEnd.MaxLength = 60;
+            txtNumEnd.MaxLength = 7;
+            txtCom.MaxLength = 30;
+            txtBai.MaxLength = 30;
+            txtMun.MaxLength = 30;
+            txtEst.MaxLength = 2;
         }
-
-        private void txtCep_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void txtImu_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-
-        }
-
-        /*public static string semFormato(this MaskedTextBox _mask)
-        {
-
-            txt
-            //metodo de extensão que retira a formatação do conteudo para adicionar no BD
-            _mask.TextMaskFormat = MaskFormat.ExcludePromptAndLiterals;
-            String retString = _mask.Text;
-            _mask.TextMaskFormat = MaskFormat.IncludePromptAndLiterals;
-            return retString;
-        }*/
+        
 
         private void btnCadastrar_Click(object sender, RoutedEventArgs e)
         {
@@ -103,83 +91,7 @@ namespace SCSCONTABIL2
             principal.Show();
             this.Close();
         }
-
-        private void txtCnpj_FocusableChanged(object sender, DependencyPropertyChangedEventArgs e)
-        {
-            if (txtCnpj.Text.Equals(""))
-            {
-                //faz o masked textbox iniciar sempre no primeiro caracter
-                txtCnpj.SelectionStart = 0;
-                txtCnpj.ScrollToHome();
-            }
-        }
-
-        private void txtCnpj_GotFocus(object sender, RoutedEventArgs e)
-        {
-            if (txtCnpj.Text.Equals(""))
-            {
-                //faz o masked textbox iniciar sempre no primeiro caracter
-                txtCnpj.SelectionStart = 0;
-                //txtCnpj.ScrollToCaret();
-            }
-        }
-
-        private void txtImu_GotFocus(object sender, RoutedEventArgs e)
-        {
-            if (txtImu.Text.Equals(""))
-            {
-                //faz o masked textbox iniciar sempre no primeiro caracter
-                txtImu.SelectionStart = 0;
-                //txtImu.ScrollToCaret();
-            }
-        }
-
-        private void txtIes_GotFocus(object sender, RoutedEventArgs e)
-        {
-            if (txtIes.Text.Equals(""))
-            {
-                //faz o masked textbox iniciar sempre no primeiro caracter
-                txtIes.SelectionStart = 0;
-                //txtIes.ScrollToCaret();
-            }
-        }
-
-        private void txtDdd_GotFocus(object sender, RoutedEventArgs e)
-        {
-            if (txtDdd.Text.Equals(""))
-            {
-                //faz o masked textbox iniciar sempre no primeiro caracter
-                txtDdd.SelectionStart = 0;
-                //txtDdd.ScrollToCaret();
-            }
-        }
-
-        private void txtNumTel_GotFocus(object sender, RoutedEventArgs e)
-        {
-            if (txtNumTel.Text.Equals(""))
-            {
-                //faz o masked textbox iniciar sempre no primeiro caracter
-                txtNumTel.SelectionStart = 0;
-                //txtNumTel.ScrollToCaret();
-            }
-        }
-
-        private void txtCep_GotFocus(object sender, RoutedEventArgs e)
-        {
-            if (txtCep.Text.Equals(""))
-            {
-                //faz o masked textbox iniciar sempre no primeiro caracter
-                txtCep.SelectionStart = 0;
-                //txtCep.ScrollToCaret();
-            }
-        }
-
-        private void lblStatus_SizeChanged(object sender, SizeChangedEventArgs e)
-        {
-            //centraliza o label
-            //lblStatus.Left = (this.ClientSize.Width - lblStatus.Size.Width) / 2;
-        }
-
+               
         public void busca(string cep)
         {
             try
@@ -188,7 +100,7 @@ namespace SCSCONTABIL2
                 //uso da API Correios.Net
                 //https://github.com/hamboldt/Correios.Net
                 //Faz a pesquisa na base de dados dos correios usando o cep
-                Address address = SearchZip.GetAddress(cep, 5000);
+                Address address = SearchZip.GetAddress(cep, 4000);
 
                 if (address.Street != "Não encontrado")
                 {
@@ -385,7 +297,5 @@ namespace SCSCONTABIL2
             txtMun.Text = "";
             txtEst.Text = "";
         }
-
-        
     }
 }

@@ -5,6 +5,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using Xceed.Wpf.Toolkit;
 using MySql.Data.MySqlClient;
+
 namespace SCSCONTABIL2
 {
     /// <summary>
@@ -19,25 +20,15 @@ namespace SCSCONTABIL2
         //codigo que será cadastrado o produto
         static private int cod = 1;
         //preco do produto
-        static private String preco;
+        
         public frmCadPro()
         {
             InitializeComponent();
-        }
-
-        private void txtCnpj_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void txtNome_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
-        private void textBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
+            txtPreco.Text = "0,00";
+            txtNomePro.MaxLength = 39;
+            txtPreco.MaxLength = 20;
+            txtQtd.MaxLength = 9;
+            txtCnpj.Focus();
         }
 
         private void btnCad_Click(object sender, RoutedEventArgs e)
@@ -86,13 +77,6 @@ namespace SCSCONTABIL2
             }
         }
 
-        private void txtPreco_LostFocus(object sender, RoutedEventArgs e)
-        {
-            //troca ponto (separador de milhares) por vazio
-            //troca a virgula(separador de centavos) por ponto
-            preco = txtPreco.Text.Replace(".", "").Replace(",", ".");
-        }
-
         private void txtPreco_TextChanged(object sender, TextChangedEventArgs e)
         {
             //chama o metodo que formatara o valor
@@ -100,27 +84,28 @@ namespace SCSCONTABIL2
         }
 
         private void txtPreco_KeyDown(object sender, KeyEventArgs e)
-        {
-            //bloqueia a digitação de valores diferentes de numeros, backspace, e ponto no textbox
-            if (!char.IsDigit((char)e.Key) && (char)e.Key != (char)8 && (char)e.Key != (char)44)
-            {
-                e.Handled = true;
-            }
-
-            //limita somente a 1 ponto (para separar os centavos) no textbox
-            if ((char)e.Key == '.' && (sender as TextBox).Text.IndexOf('.') > -1)
-            {
-                e.Handled = true;
-            }
+        {//bloqueia a digitação de valores diferentes de numeros no textbox
+            e.Handled = !recebeNumero(e.Key);
         }
+
+        
 
         private void txtQtd_KeyDown(object sender, KeyEventArgs e)
         {
-            //só permite numeros e o backspace no textbox
-            if (!char.IsDigit((char)e.Key) && (char)e.Key != (char)8)
+            e.Handled = !recebeNumero(e.Key);
+        }
+
+
+        private bool recebeNumero(Key inKey)
+        {
+            if (inKey < Key.D0 || inKey > Key.D9)
             {
-                e.Handled = true;
+                if (inKey < Key.NumPad0 || inKey > Key.NumPad9)
+                {
+                    return false;
+                }
             }
+            return true;
         }
 
         private void Moeda(ref TextBox txt)
@@ -182,6 +167,7 @@ namespace SCSCONTABIL2
                         //se não for retornado nenhum dado a msg abaixo será exibida
                         lblStatus.Foreground = Brushes.Red;
                         lblStatus.Content = "CNPJ não encontrado";
+                        txtCnpj.Text = "";
                         leitor.Close();
                         conexao.fechar();
                         txtCnpj.Focus();
@@ -244,7 +230,7 @@ namespace SCSCONTABIL2
 
         private void cadastrar()
         {//ira cadastrar o produto
-
+            String preco = txtPreco.Text.Replace(".", "").Replace(",", ".");
             DateTime data = DateTime.Now;
             try
             {   //abre a conexao com o bd
@@ -269,7 +255,8 @@ namespace SCSCONTABIL2
             {
                 //caso de erro na quantidade de digitos do preço
                 lblStatus.Foreground = Brushes.Red;
-                lblStatus.Content = "Preço invalido";
+                Xceed.Wpf.Toolkit.MessageBox.Show(preco);
+                lblStatus.Content = erro.Message;
                 conexao.fechar();
             }
             catch (Exception erro)

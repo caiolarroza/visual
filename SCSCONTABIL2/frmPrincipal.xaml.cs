@@ -110,5 +110,14 @@ namespace SCSCONTABIL2
             //fecha o programa
             Application.Current.Shutdown();
         }
+
+        private void btnLogout_Click(object sender, RoutedEventArgs e)
+        {
+            //Instancia do form frmPrincipal
+            frmLogin login = new frmLogin();
+            //mostra o form frmPrincipal e fecha esse
+            login.Show();
+            this.Close();
+        }
     }
 }

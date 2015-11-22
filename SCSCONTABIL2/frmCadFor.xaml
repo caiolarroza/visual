@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:SCSCONTABIL2"
         xmlns:xctk ="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
-        Title="CADASTRO DE FORNECEDOR" Height="752" Width="750" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
-    <Grid Margin="0,0,0,-1">
+        Title="CADASTRO DE FORNECEDOR" Height="806" Width="750" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid Margin="0,0,0,46.8">
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
@@ -21,24 +21,24 @@
             x:Name="txtIes"
             Margin="150,146,17,3"
             Mask="000.000.000.000"
-            FontSize="13.333" Grid.ColumnSpan="2" Height="30" GotFocus="txtIes_GotFocus"/>
+            FontSize="13.333" Grid.ColumnSpan="2" Height="30" TabIndex="4"/>
         </GroupBox>
         <Label x:Name="label" Content="Razão Social:*" HorizontalAlignment="Left" Height="30" Margin="138,49,0,0" VerticalAlignment="Top" Width="93"/>
-        <TextBox x:Name="txtRazao" Grid.ColumnSpan="2" CharacterCasing="Upper" HorizontalAlignment="Left" Height="16" Margin="279,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="333" FontSize="13.333"/>
+        <TextBox x:Name="txtRazao" Grid.ColumnSpan="2" CharacterCasing="Upper" HorizontalAlignment="Left" Height="16" Margin="279,49,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="333" FontSize="13.333" TabIndex="0"/>
         <Label x:Name="label1" Content="Nome Fantasia:*" HorizontalAlignment="Left" Height="30" Margin="138,84,0,0" VerticalAlignment="Top" Width="106"/>
-        <TextBox x:Name="txtNome" Grid.ColumnSpan="2" HorizontalAlignment="Left" CharacterCasing="Upper" Height="20" Margin="279,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="333" FontSize="13.333"/>
+        <TextBox x:Name="txtNome" Grid.ColumnSpan="2" HorizontalAlignment="Left" CharacterCasing="Upper" Height="20" Margin="279,84,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="333" FontSize="13.333" TabIndex="1"/>
         <Label x:Name="label2" Content="CNPJ:*" HorizontalAlignment="Left" Height="30" Margin="138,119,0,0" VerticalAlignment="Top" Width="58"/>
         <xctk:MaskedTextBox
             x:Name="txtCnpj"
             Margin="279,119,132,213"
             Mask="00.000.000/0000-00"
-            FontSize="13.333" Grid.ColumnSpan="2" GotFocus="txtCnpj_GotFocus"/>
+            FontSize="13.333" Grid.ColumnSpan="2" TabIndex="2"/>
         <Label x:Name="label3" Content="Inscrição Municipal:*" HorizontalAlignment="Left" Height="30" Margin="138,154,0,0" VerticalAlignment="Top" Width="139"/>
         <xctk:MaskedTextBox
             x:Name="txtImu"
             Margin="279,154,132,178"
             Mask="00.000"
-            FontSize="13.333" Grid.ColumnSpan="2" TextChanged="txtImu_TextChanged" GotFocus="txtImu_GotFocus"/>
+            FontSize="13.333" Grid.ColumnSpan="2" TabIndex="3"/>
         <Label x:Name="label4" Content="Inscrição Estadual:*" HorizontalAlignment="Left" Height="30" Margin="138,189,0,0" VerticalAlignment="Top" Width="126"/>
         <GroupBox x:Name="groupBox1" Header="Contato" HorizontalAlignment="Left" Margin="118,247,0,35" Width="294" Grid.ColumnSpan="2" FontSize="13.333"/>
         <Label x:Name="label5" Content="Telefone:*" HorizontalAlignment="Left" Height="30" Margin="136,277,0,0" VerticalAlignment="Top" Width="74"/>
@@ -46,12 +46,12 @@
             x:Name="txtDdd"
             Margin="224,277,117,55"
             Mask="(00)"
-            FontSize="13.333" GotFocus="txtDdd_GotFocus"/>
+            FontSize="13.333" TabIndex="5"/>
         <xctk:MaskedTextBox
             x:Name="txtNumTel"
             Margin="270,277,349,55"
             Mask="0000-0000"
-            FontSize="13.333" Grid.ColumnSpan="2" GotFocus="txtNumTel_GotFocus"/>
+            FontSize="13.333" Grid.ColumnSpan="2" TabIndex="6"/>
         <GroupBox x:Name="groupBox2" Grid.ColumnSpan="2" Header="Endereço" Height="295" Margin="118,340,104,0" VerticalAlignment="Top" FontSize="13.333" Grid.RowSpan="2">
             <Label x:Name="label11" Content="Municipio:*" HorizontalAlignment="Left" Margin="14,190,0,39" Width="82" Height="30"/>
         </GroupBox>
@@ -60,23 +60,23 @@
             x:Name="txtCep"
             Margin="247,18,331,314"
             Mask="00000-000"
-            FontSize="13.333" Grid.ColumnSpan="2" Grid.Row="1" GotFocus="txtCep_GotFocus"/>
-        <Button x:Name="btnCep" Content="BUSCAR" HorizontalAlignment="Left" Height="25" Margin="61,18,0,0" Grid.Row="1" VerticalAlignment="Top" Width="80" Grid.Column="1" Click="btnCep_Click"/>
+            FontSize="13.333" Grid.ColumnSpan="2" Grid.Row="1" TabIndex="7"/>
+        <Button x:Name="btnCep" Content="BUSCAR" HorizontalAlignment="Left" Height="25" Margin="61,18,0,0" Grid.Row="1" VerticalAlignment="Top" Width="80" Grid.Column="1" Click="btnCep_Click" TabIndex="8"/>
         <Label x:Name="label7" Content="Rua/Avenida:*" HorizontalAlignment="Left" Height="35" Margin="140,52,0,0" Grid.Row="1" VerticalAlignment="Top" Width="106"/>
-        <TextBox x:Name="txtEnd" Height="13" Margin="246,53,132,0" Grid.Row="1" CharacterCasing="Upper" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2" FontSize="13.333"/>
+        <TextBox x:Name="txtEnd" Height="13" Margin="246,53,132,0" Grid.Row="1" CharacterCasing="Upper" TextWrapping="Wrap" VerticalAlignment="Top" Grid.ColumnSpan="2" FontSize="13.333" TabIndex="9"/>
         <Label x:Name="label8" Content="Número:*" HorizontalAlignment="Left" Height="30" Margin="144,88,0,0" Grid.Row="1" VerticalAlignment="Top" Width="70"/>
-        <TextBox x:Name="txtNumEnd" HorizontalAlignment="Left" Height="25" Margin="246,88,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="366" Grid.ColumnSpan="2" FontSize="13.333"/>
+        <TextBox x:Name="txtNumEnd" HorizontalAlignment="Left" Height="25" Margin="246,88,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="366" Grid.ColumnSpan="2" FontSize="13.333" TabIndex="10"/>
         <Label x:Name="label9" Content="Complemento:" HorizontalAlignment="Left" Height="30" Margin="144,123,0,0" Grid.Row="1" VerticalAlignment="Top" Width="102"/>
-        <TextBox x:Name="txtCom" HorizontalAlignment="Left" Height="19" CharacterCasing="Upper" Margin="246,123,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="366" Grid.ColumnSpan="2" FontSize="13.333"/>
+        <TextBox x:Name="txtCom" HorizontalAlignment="Left" Height="19" CharacterCasing="Upper" Margin="246,123,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="366" Grid.ColumnSpan="2" FontSize="13.333" TabIndex="11"/>
         <Label x:Name="label10" Content="Bairro:*" HorizontalAlignment="Left" Margin="144,158,0,174" Grid.Row="1" Width="54" Height="30"/>
-        <TextBox x:Name="txtBai" HorizontalAlignment="Left" Height="1" CharacterCasing="Upper" Margin="246,158,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="366" Grid.ColumnSpan="2" FontSize="13.333"/>
-        <TextBox x:Name="txtMun" HorizontalAlignment="Left" Height="0" CharacterCasing="Upper" Margin="246,193,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="366" Grid.ColumnSpan="2" FontSize="13.333"/>
-        <Label x:Name="label12" Content="Estado:*" HorizontalAlignment="Left" Height="30" Margin="144,228,0,0" Grid.Row="1" VerticalAlignment="Top" Width="70"/>
-        <TextBox x:Name="txtEst" HorizontalAlignment="Left" Height="17" CharacterCasing="Upper" Margin="246,228,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="366" Grid.ColumnSpan="2" FontSize="13.333"/>
-        <Button x:Name="btnCadastrar" Content="CADASTRAR" Height="28" Margin="194,291,64,0" Grid.Row="1" VerticalAlignment="Top" Click="btnCadastrar_Click"/>
-        <Button x:Name="btnVoltar" Content="VOLTAR" Height="28" Margin="64,291,190,0" Grid.Row="1" VerticalAlignment="Top" Width="110" Grid.Column="1" Click="btnVoltar_Click"/>
-        <Label x:Name="label13" Content="Todos os campos com * são obrigatórios" Height="30" Margin="247,326,151,0" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
-        <Label x:Name="lblStatus" Grid.ColumnSpan="2" Content="" HorizontalAlignment="Left" Height="30" Margin="332,291,0,0" Grid.Row="1" VerticalAlignment="Top" Width="80" SizeChanged="lblStatus_SizeChanged"/>
+        <TextBox x:Name="txtBai" HorizontalAlignment="Left" Height="1" CharacterCasing="Upper" Margin="246,158,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="366" Grid.ColumnSpan="2" FontSize="13.333" TabIndex="12"/>
+        <TextBox x:Name="txtMun" HorizontalAlignment="Left" Height="0" CharacterCasing="Upper" Margin="246,193,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="366" Grid.ColumnSpan="2" FontSize="13.333" TabIndex="13"/>
+        <Label x:Name="label12" Content="Estado(UF):*" HorizontalAlignment="Left" Height="30" Margin="144,228.2,0,0" Grid.Row="1" VerticalAlignment="Top" Width="87"/>
+        <TextBox x:Name="txtEst" HorizontalAlignment="Left" Height="17" CharacterCasing="Upper" Margin="246,228,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="366" Grid.ColumnSpan="2" FontSize="13.333" TabIndex="14"/>
+        <Button x:Name="btnCadastrar" Content="CADASTRAR" Height="28" Margin="192,321,66,0" Grid.Row="1" VerticalAlignment="Top" Click="btnCadastrar_Click" TabIndex="15"/>
+        <Button x:Name="btnVoltar" Content="VOLTAR" Height="28" Margin="66,321,196,0" Grid.Row="1" VerticalAlignment="Top" Width="110" Grid.Column="1" Click="btnVoltar_Click" TabIndex="16"/>
+        <Label x:Name="label13" Content="Todos os campos com * são obrigatórios" HorizontalContentAlignment="Center" Height="30" Margin="10,371.2,10,-36.4" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblStatus" Grid.ColumnSpan="2" Content="" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="30" Margin="10,280,0,0" Grid.Row="1" VerticalAlignment="Top" Width="724"/>
 
     </Grid>
 </Window>

@@ -17,14 +17,14 @@
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
         <Label x:Name="label13" Content="Usuário:" HorizontalAlignment="Left" Height="29" Margin="170,120,0,0" VerticalAlignment="Top" Width="64" FontSize="14.667"/>
-        <TextBox x:Name="txtUsu" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="30" CharacterCasing="Upper" Margin="258,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="234"/>
+        <TextBox x:Name="txtUsu" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="30" CharacterCasing="Upper" Margin="258,120,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="234" TabIndex="0"/>
         <Label x:Name="label14" Content="Senha:" HorizontalAlignment="Left" Height="29" Margin="170,168,0,0" VerticalAlignment="Top" Width="64" FontSize="14.667"/>
-        <TextBox x:Name="txtSen" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="30" CharacterCasing="Upper" Margin="258,168,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="234"/>
         <Label x:Name="label15" Content="Tipo:" HorizontalAlignment="Left" Height="29" Margin="170,216,0,0" VerticalAlignment="Top" Width="64" FontSize="14.667" Grid.RowSpan="2"/>
-        <ComboBox x:Name="cmbTipo" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="30" Margin="258,216,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="234"/>
-        <Button x:Name="btnCadastrar" Content="CADASTRAR" HorizontalAlignment="Left" Height="51" Margin="196,62,0,0" Grid.Row="1" VerticalAlignment="Top" Width="134" Grid.RowSpan="2" Click="btnCadastrar_Click"/>
-        <Button x:Name="btnVoltar" Content="VOLTAR" HorizontalAlignment="Left" Height="51" Margin="42,62,0,0" Grid.Row="1" VerticalAlignment="Top" Width="134" Grid.Column="1" Grid.RowSpan="2" Click="btnVoltar_Click"/>
-        <Label x:Name="lblStatus" Grid.ColumnSpan="2" Content="" HorizontalAlignment="Left" Height="32" Margin="330,35,0,0" Grid.Row="1" VerticalAlignment="Top" Width="80" SizeChanged="lblStatus_SizeChanged"/>
+        <ComboBox x:Name="cmbTipo" Grid.ColumnSpan="2" HorizontalAlignment="Left" Height="30" Margin="258,216,0,0" Grid.RowSpan="2" VerticalAlignment="Top" Width="234" TabIndex="2"/>
+        <Button x:Name="btnCadastrar" Content="CADASTRAR" HorizontalAlignment="Left" Height="51" Margin="196,62,0,0" Grid.Row="1" VerticalAlignment="Top" Width="134" Grid.RowSpan="2" Click="btnCadastrar_Click" TabIndex="3"/>
+        <Button x:Name="btnVoltar" Content="VOLTAR" HorizontalAlignment="Left" Height="51" Margin="42,62,0,0" Grid.Row="1" VerticalAlignment="Top" Width="134" Grid.Column="1" Grid.RowSpan="2" Click="btnVoltar_Click" TabIndex="4"/>
+        <Label x:Name="lblStatus" Grid.ColumnSpan="2" Content="" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="32" Margin="10,15,0,0" Grid.Row="1" VerticalAlignment="Top" Width="724"/>
+        <PasswordBox x:Name="txtSen" HorizontalAlignment="Left" Margin="258,167,0,0" VerticalAlignment="Top" Grid.ColumnSpan="2" Width="234" TabIndex="1"/>
 
     </Grid>
 </Window>

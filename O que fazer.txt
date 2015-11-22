@@ -1,0 +1,9 @@
+arrumar os tabindex (ordem do tab) nas propriedades do objeto (textbox, botão, etc), na aba comum (common)
+
+na parte XAML das telas, colocar em todos os text box a propriedade CharacterCasing="Upper" (UPPERCASE)
+
+olhar o lblStatus da consulta de produtos, deixar esse lblStatus igual nas outras telas. PS: em todos colocar a propriedade HorizontalContentAlignment="Center" no XAML (centraliza o texto)
+
+limitar o tamanho maximo dos txt conforme o Banco de dados (no começo do codigo, no construtor), sempre -1 do que no banco de dados
+
+arrumar o lblStatus do cadastro de produtos

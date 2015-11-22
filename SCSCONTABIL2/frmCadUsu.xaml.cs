@@ -38,25 +38,27 @@ namespace SCSCONTABIL2
         public frmCadUsu()
         {
             InitializeComponent();
+            cmbTipo.Items.Add("A");
+            cmbTipo.Items.Add("B");
+            cmbTipo.Items.Add("C");
+            txtUsu.MaxLength = 39;
+            txtSen.MaxLength = 24;
+            txtUsu.Focus();
         }
 
-        private void lblStatus_SizeChanged(object sender, SizeChangedEventArgs e)
-        {
-            //centraliza o label conforme o form
-            //lblStatus.Left = (this.ClientSize.Width - lblStatus.Size.Width) / 2;
-        }
+       
 
         private void btnCadastrar_Click(object sender, RoutedEventArgs e)
         {
             //receber dados dos textBox
             usuario = txtUsu.Text;
-            senha = txtSen.Text;
+            senha = txtSen.Password;
             //converter a opção do comboBox para string
             tipoUsu = Convert.ToString(cmbTipo.SelectedItem);
             if (tipoUsu.Equals("") || usuario.Equals("") || senha.Equals(""))
             {   //reinicia os valores                             
                 txtUsu.Text = "";
-                txtSen.Text = "";
+                txtSen.Password = "";
                 cmbTipo.SelectedIndex = -1;
                 lblStatus.Foreground = Brushes.Red;
                 lblStatus.Content = "Preencha todos os campos";
@@ -90,7 +92,7 @@ namespace SCSCONTABIL2
                         lblStatus.Foreground = Brushes.Red;
                         lblStatus.Content = "Usuário já cadastrado";
                         txtUsu.Text = "";
-                        txtSen.Text = "";
+                        txtSen.Password = "";
                         cmbTipo.SelectedIndex = -1;
                         txtUsu.Focus();
                         conexao.fechar();
@@ -173,7 +175,7 @@ namespace SCSCONTABIL2
                 lblStatus.Foreground = Brushes.Green;
                 lblStatus.Content = "Usuario cadastrado com sucesso";
                 //limpa os campos e foca no txt de Usuario
-                txtSen.Text = "";
+                txtSen.Password = "";
                 txtUsu.Text = "";
                 cmbTipo.SelectedIndex = -1;
                 txtUsu.Focus();
