@@ -24,7 +24,11 @@ namespace SCSCONTABIL2
         public frmCadPro()
         {
             InitializeComponent();
+            limpar();
+            txtICMS.Text = "0,00";
+            txtPrecoTotal.Text = "0,00";
             txtPreco.Text = "0,00";
+            txtFrete.Text = "0,00";
             txtNomePro.MaxLength = 39;
             txtPreco.MaxLength = 20;
             txtQtd.MaxLength = 9;
@@ -37,7 +41,9 @@ namespace SCSCONTABIL2
             if (txtCnpj.semFormato().Equals("") || txtRazao.Text.Equals("") ||
                 txtNome.Text.Equals("") || txtIes.semFormato().Equals("") ||
                 txtImu.semFormato().Equals("") || txtNomePro.Text.Equals("") ||
-                txtPreco.Text.Equals(""))
+                txtPreco.Text.Equals("") || txtPrecoTotal.Text.Equals("0,00") ||
+                txtFrete.Text.Equals("0,00") || txtICMS.Text.Equals("0,00") ||
+                txtData.semFormato().Equals(""))
             {
                 lblStatus.Foreground = Brushes.Red;
                 lblStatus.Content = "Preencha todos os campos com *";
@@ -48,11 +54,7 @@ namespace SCSCONTABIL2
             }
         }
 
-        private void lblStatus_SizeChanged(object sender, SizeChangedEventArgs e)
-        {
-            //centraliza o label
-            //lblStatus.Left = (this.ClientSize.Width - lblStatus.Size.Width) / 2;
-        }
+        
 
         private void btnVol_Click(object sender, RoutedEventArgs e)
         {
@@ -231,18 +233,25 @@ namespace SCSCONTABIL2
         private void cadastrar()
         {//ira cadastrar o produto
             String preco = txtPreco.Text.Replace(".", "").Replace(",", ".");
-            DateTime data = DateTime.Now;
+            String precoFi = txtPrecoTotal.Text.Replace(".", "").Replace(",", ".");
+            String frete = txtFrete.Text.Replace(".", "").Replace(",", ".");
+            String icms = txtICMS.Text.Replace(".", "").Replace(",", ".");
+            DateTime data = Convert.ToDateTime(txtData.Text);
             try
             {   //abre a conexao com o bd
                 conexao.abrir();
                 //comando do bd
-                MySqlCommand cadastroPro = new MySqlCommand("insert into produto values (?codigo, ?nome, ?fornecedor, ?preco, ?data, ?qtd)", conexao.con);
+                MySqlCommand cadastroPro = new MySqlCommand("insert into produto values (?codigo, ?nome, ?fornecedor, ?preco, ?data, ?qtd, " + 
+                    "?precoTotal, ?frete, ?icms)", conexao.con);
                 cadastroPro.Parameters.Add(new MySqlParameter("?codigo", cod));
                 cadastroPro.Parameters.Add(new MySqlParameter("?nome", txtNomePro.Text));
                 cadastroPro.Parameters.Add(new MySqlParameter("?fornecedor", fornecedor));
                 cadastroPro.Parameters.Add(new MySqlParameter("?preco", preco));
                 cadastroPro.Parameters.Add(new MySqlParameter("?data", data));
                 cadastroPro.Parameters.Add(new MySqlParameter("?qtd", txtQtd.Text));
+                cadastroPro.Parameters.Add(new MySqlParameter("?precoTotal", precoFi));
+                cadastroPro.Parameters.Add(new MySqlParameter("?frete", frete));
+                cadastroPro.Parameters.Add(new MySqlParameter("?icms", icms));
                 //executa o comando        
                 cadastroPro.ExecuteNonQuery();
                 conexao.fechar();
@@ -278,6 +287,66 @@ namespace SCSCONTABIL2
             txtNomePro.Text = "";
             txtPreco.Text = "";
             txtQtd.Text = "";
+            txtPrecoTotal.Text = "";
+            txtData.Text = "";
+            txtFrete.Text = "";
+            txtICMS.Text = "";
         }
+
+        private void txtPrecoTotal_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            //chama o metodo que formatara o valor
+            Moeda(ref txtPrecoTotal);
+
+            String precoS = txtPrecoTotal.Text.Replace(".", "").Replace(",", ".");
+            Decimal precoF = Convert.ToDecimal(precoS);
+            txtFrete.Text = Convert.ToString(precoF/100);
+            txtICMS.Text = Convert.ToString((precoF / 100) * 18);
+        }
+
+        private void txtPrecoTotal_KeyDown(object sender, KeyEventArgs e)
+        {
+            //bloqueia a digitação de valores diferentes de numeros no textbox
+            e.Handled = !recebeNumero(e.Key);
+
+        }
+
+        private void txtFrete_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            //chama o metodo que formatara o valor
+            Moeda(ref txtFrete);
+        }
+
+        private void txtICMS_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            //chama o metodo que formatara o valor
+            Moeda(ref txtICMS);
+        }
+
+        private void txtPreco_LostFocus(object sender, RoutedEventArgs e)
+        {
+            String precoS = txtPreco.Text.Replace(".", "").Replace(",", ".");
+            if (!txtQtd.Text.Equals("") && !precoS.Equals("0.00"))
+            {
+                
+                Decimal precoF = Convert.ToDecimal(precoS);
+                int unidades = Convert.ToInt32(txtQtd.Text);
+                txtPrecoTotal.Text = Convert.ToString(precoF * unidades);
+            }
+            
+        }
+
+        private void txtQtd_LostFocus(object sender, RoutedEventArgs e)
+        {
+            String precoS = txtPreco.Text.Replace(".", "").Replace(",", ".");
+            if (!precoS.Equals("0.00") && !txtQtd.Equals(""))
+            {
+                Decimal precoF = Convert.ToDecimal(precoS);
+                int unidades = Convert.ToInt32(txtQtd.Text);
+                txtPrecoTotal.Text = Convert.ToString(precoF * unidades);
+            }
+        }
+
+        
     }
 }

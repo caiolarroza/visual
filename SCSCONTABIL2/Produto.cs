@@ -15,7 +15,9 @@ namespace SCSCONTABIL2
         public DateTime data { get; set; }
         public String ProDat { get; set; }
         public int ProQtd { get; set; }
-
+        public decimal ProPcoTot { get; set; }
+        public decimal ProFre { get; set; }
+        public decimal ProIcms { get; set; }
 
     }
 }

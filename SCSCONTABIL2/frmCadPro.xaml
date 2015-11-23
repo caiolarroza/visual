@@ -6,8 +6,8 @@
         xmlns:local="clr-namespace:SCSCONTABIL2"
         xmlns:xctk ="http://schemas.xceed.com/wpf/xaml/toolkit"
         mc:Ignorable="d"
-        Title="frmCadPro" Height="520" Width="750" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
-    <Grid Width="744" Height="480">
+        Title="frmCadPro" Height="838" Width="750" ResizeMode="NoResize" WindowStartupLocation="CenterScreen">
+    <Grid Width="744" Margin="0,5,0,0" Height="799" VerticalAlignment="Top" HorizontalAlignment="Right">
         <Grid.RowDefinitions>
             <RowDefinition/>
             <RowDefinition/>
@@ -16,41 +16,53 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+        <GroupBox x:Name="groupBox1" Header="Dados do Produto" HorizontalAlignment="Left" Margin="100,247,0,0" VerticalAlignment="Top" Height="371" Grid.RowSpan="2" Width="544" Grid.ColumnSpan="2"/>
         <Label x:Name="label16" Content="Digite o CNPJ do fornecedor:*" HorizontalAlignment="Left" Height="30" Margin="100,15,0,0" VerticalAlignment="Top" Width="192"/>
         <xctk:MaskedTextBox
             x:Name="txtCnpj"
-            Margin="325,14,243,197"
+            Margin="325,14,243,0"
             Mask="00.000.000/0000-00"
-            FontSize="14" Grid.ColumnSpan="2"/>
+            FontSize="14" Grid.ColumnSpan="2" Height="34" VerticalAlignment="Top"/>
         <Button x:Name="btnFor" Content="BUSCAR" Grid.Column="1" Height="28" Margin="186,10,100,0" VerticalAlignment="Top" Click="btnFor_Click"/>
-        <GroupBox x:Name="groupBox" Header="Dados do Fornecedor" HorizontalAlignment="Left" Height="189" Margin="100,51,0,0" VerticalAlignment="Top" Width="544" Grid.RowSpan="2" Grid.ColumnSpan="2" FontSize="13.333">
+        <GroupBox x:Name="groupBox" Header="Dados do Fornecedor" HorizontalAlignment="Left" Height="189" Margin="100,53,0,0" VerticalAlignment="Top" Width="544" Grid.ColumnSpan="2" FontSize="13.333">
             <TextBox x:Name="txtRazao" Height="20" Margin="156,9,21,0" TextWrapping="Wrap" CharacterCasing="Upper" Text="&#xA;" VerticalAlignment="Top" FontSize="13.333" IsEnabled="False"/>
         </GroupBox>
         <Label x:Name="label17" Content="Razão Social:*" HorizontalAlignment="Left" Height="30" Margin="118,86,0,0" VerticalAlignment="Top" Width="100"/>
         <Label x:Name="label18" Content="Nome Fantasia:*" HorizontalAlignment="Left" Height="30" Margin="118,121,0,0" VerticalAlignment="Top" Width="113"/>
-        <TextBox x:Name="txtNome" HorizontalAlignment="Left" Height="20" Margin="266,122,0,0" CharacterCasing="Upper" TextWrapping="Wrap" VerticalAlignment="Top" Width="345" Grid.ColumnSpan="2" FontSize="13.333" IsEnabled="False"/>
+        <TextBox x:Name="txtNome" HorizontalAlignment="Left" Height="20" Margin="266,132,0,238" CharacterCasing="Upper" TextWrapping="Wrap" Width="345" Grid.ColumnSpan="2" FontSize="13.333" IsEnabled="False"/>
         <xctk:MaskedTextBox
             x:Name="txtImu"
-            Margin="266,160,133,47"
+            Margin="266,162,133,0"
             Mask="00.000"
-            FontSize="14" Grid.ColumnSpan="2" Height="30" IsEnabled="False"/>
+            FontSize="14" Grid.ColumnSpan="2" Height="30" IsEnabled="False" VerticalAlignment="Top"/>
         <xctk:MaskedTextBox
             x:Name="txtIes"
-            Margin="266,200,133,10"
+            Margin="266,200,133,0"
             Mask="000.000.000.000"
-            FontSize="14" Grid.ColumnSpan="2" IsEnabled="False"/>
+            FontSize="14" Grid.ColumnSpan="2" IsEnabled="False" Height="32" VerticalAlignment="Top"/>
         <Label x:Name="label19" Content="Inscrição Municipal:*" HorizontalAlignment="Left" Height="30" Margin="118,160,0,0" VerticalAlignment="Top" Width="133"/>
-        <Label x:Name="lblStatus" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="10,10,0,0" Width="282"/>
+        <Label x:Name="lblStatus" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="10,191,0,0" Width="724" Grid.ColumnSpan="2" Grid.Row="1"/>
         <Label x:Name="label20" Content="Inscrição Estadual:*" HorizontalAlignment="Left" Height="30" Margin="118,198,0,0" VerticalAlignment="Top" Width="133" RenderTransformOrigin="0.459,0.645"/>
-        <GroupBox x:Name="groupBox1" Grid.ColumnSpan="2" Header="Dados do Produto" HorizontalAlignment="Left" Height="156" Margin="100,5,0,0" Grid.Row="1" VerticalAlignment="Top" Width="544" FontSize="13.333"/>
-        <Label x:Name="label" Content="Nome:*" HorizontalAlignment="Left" Height="30" Margin="118,41,0,0" Grid.Row="1" VerticalAlignment="Top" Width="57"/>
-        <TextBox x:Name="txtNomePro" HorizontalAlignment="Left" Height="20" Margin="211,41,0,0" CharacterCasing="Upper" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" Grid.ColumnSpan="2"/>
-        <Label x:Name="label1" Content="Preço(R$):*" HorizontalAlignment="Left" Height="30" Margin="118,80,0,0" Grid.Row="1" VerticalAlignment="Top" Width="76"/>
-        <TextBox x:Name="txtPreco" HorizontalAlignment="Left" Height="20" Margin="211,80,0,0" Grid.Row="1" CharacterCasing="Upper" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" Grid.ColumnSpan="2" TextChanged="txtPreco_TextChanged" KeyDown="txtPreco_KeyDown"/>
-        <Label x:Name="label2" Content="Quantidade:*" HorizontalAlignment="Left" Height="30" Margin="118,118,0,0" Grid.Row="1" VerticalAlignment="Top" Width="89"/>
-        <TextBox x:Name="txtQtd" HorizontalAlignment="Left" Height="20" Margin="211,119,0,0" Grid.Row="1" TextWrapping="Wrap" CharacterCasing="Upper" VerticalAlignment="Top" Width="400" Grid.ColumnSpan="2" KeyDown="txtQtd_KeyDown"/>
-        <Button x:Name="btnCad" Content="CADASTRAR" Height="28" Margin="162,177,100,0" VerticalAlignment="Top" Grid.Row="1" Width="110" Click="btnCad_Click"/>
-        <Button x:Name="btnVol" Content="VOLTAR" Height="28" Margin="100,177,162,0" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1" Width="110" Click="btnVol_Click"/>
-        <Label x:Name="label3" Grid.ColumnSpan="2" Content="Todos os campos com * são obrigatórios" Height="33" Margin="244,207,244,0" Grid.Row="1" VerticalAlignment="Top" Width="256"/>
+        <Label x:Name="label" Content="Nome:*" HorizontalAlignment="Left" Height="30" Margin="118,279,0,0" VerticalAlignment="Top" Width="57"/>
+        <TextBox x:Name="txtNomePro" HorizontalAlignment="Right" Height="20" Margin="0,279,133,0" CharacterCasing="Upper" TextWrapping="Wrap" VerticalAlignment="Top" Width="400" Grid.ColumnSpan="2"/>
+        <Label x:Name="label1" Content="Preço unitário(R$):*" HorizontalAlignment="Left" Height="30" Margin="118,318.8,0,0" VerticalAlignment="Top" Width="133"/>
+        <TextBox x:Name="txtPreco" HorizontalAlignment="Left" Height="20" Margin="257,319,0,0" CharacterCasing="Upper" TextWrapping="Wrap" VerticalAlignment="Top" Width="355" Grid.ColumnSpan="2" TextChanged="txtPreco_TextChanged" KeyDown="txtPreco_KeyDown" LostFocus="txtPreco_LostFocus"/>
+        <Button x:Name="btnCad" Content="CADASTRAR" Height="28" Margin="162,240,100,0" VerticalAlignment="Top" Grid.Row="1" Width="110" Click="btnCad_Click"/>
+        <Button x:Name="btnVol" Content="VOLTAR" Height="28" Margin="100,240,162,0" VerticalAlignment="Top" Grid.Row="1" Grid.Column="1" Width="110" Click="btnVol_Click"/>
+        <Label x:Name="label3" Grid.ColumnSpan="2" Content="Todos os campos com * são obrigatórios" Height="33" Margin="245,294,243,0" Grid.Row="1" VerticalAlignment="Top" Width="256"/>
+        <Label x:Name="label1_Copy" Content="Preço total(R$):*" HorizontalAlignment="Left" Margin="118,0,0,369.2" Width="113" Height="30" VerticalAlignment="Bottom" Grid.Row="1"/>
+        <Label x:Name="label2_Copy" Content="Frete(R$):*" HorizontalAlignment="Left" Height="30" Margin="118,108,0,0" Grid.Row="1" VerticalAlignment="Top" Width="89"/>
+        <Label x:Name="label2_Copy1" Content="ICMS(R$):*" HorizontalAlignment="Left" Height="30" Margin="118,156,0,0" Grid.Row="1" VerticalAlignment="Top" Width="89"/>
+        <TextBox x:Name="txtFrete" HorizontalAlignment="Left" Height="20" Margin="211,108,0,0" Grid.Row="1" TextWrapping="Wrap" CharacterCasing="Upper" VerticalAlignment="Top" Width="400" Grid.ColumnSpan="2" TextChanged="txtFrete_TextChanged" IsEnabled="False"/>
+        <TextBox x:Name="txtICMS" HorizontalAlignment="Left" Height="20" Margin="212,156,0,0" Grid.Row="1" TextWrapping="Wrap" CharacterCasing="Upper" VerticalAlignment="Top" Width="400" Grid.ColumnSpan="2" TextChanged="txtICMS_TextChanged" IsEnabled="False"/>
+        <Label x:Name="label2" Content="Quantidade:*" HorizontalAlignment="Left" Height="30" Margin="118,360,0,0" VerticalAlignment="Top" Width="89"/>
+        <TextBox x:Name="txtQtd" HorizontalAlignment="Left" Height="20" Margin="212,360,0,0" TextWrapping="Wrap" CharacterCasing="Upper" VerticalAlignment="Top" Width="400" Grid.ColumnSpan="2" KeyDown="txtQtd_KeyDown" LostFocus="txtQtd_LostFocus"/>
+        <TextBox x:Name="txtPrecoTotal" HorizontalAlignment="Left" Height="23" Margin="236,0,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="375" Grid.ColumnSpan="2" TextChanged="txtPrecoTotal_TextChanged" KeyDown="txtPrecoTotal_KeyDown" IsEnabled="False"/>
+        <xctk:MaskedTextBox
+        	x:Name="txtData"
+        	Margin="211,45,133,0"
+        	Mask="00/00/0000"
+        	FontSize="14" Grid.ColumnSpan="2" Height="32" VerticalAlignment="Top" Grid.Row="1" Text="__/__/____"/>
+        <Label x:Name="label4" Content="Data:*" HorizontalAlignment="Left" Margin="118,45,0,0" Grid.Row="1" VerticalAlignment="Top"/>
     </Grid>
 </Window>
