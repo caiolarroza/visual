@@ -22,7 +22,7 @@
         <Button x:Name="btnCadUsu" Grid.ColumnSpan="2" Content="CADASTRAR USUÁRIO" Margin="60,140,59,54" Click="btnCadUsu_Click"/>
         <Button x:Name="btnCadFor" Grid.ColumnSpan="2" Content="CADASTRAR FORNECEDOR" Height="40" Margin="60,210,59,0" VerticalAlignment="Top" Click="btnCadFor_Click" Grid.RowSpan="2"/>
         <Button x:Name="btnCadPro" Grid.ColumnSpan="2" Content="CADASTRAR PRODUTO" HorizontalAlignment="Left" Height="40" Margin="60,45,0,0" VerticalAlignment="Top" Width="253" Grid.Row="1" Click="btnCadPro_Click"/>
-        <Button x:Name="btnConUsu" Grid.ColumnSpan="2" Content="CONSULTAR USUÁRIO" Margin="59,140,60,54" Grid.Column="2"/>
+        <Button x:Name="btnConUsu" Grid.ColumnSpan="2" Content="CONSULTAR USUÁRIO" Margin="59,140,60,54" Grid.Column="2" Click="btnConUsu_Click"/>
         <Button x:Name="btnConFor" Grid.ColumnSpan="2" Content="CONSULTAR FORNECEDOR" Height="40" Margin="59,210,60,0" VerticalAlignment="Top" Grid.Column="2" Grid.RowSpan="2" Click="btnConFor_Click"/>
         <Button x:Name="btnConPro" Grid.ColumnSpan="2" Content="CONSULTAR PRODUTO" Height="40" Margin="59,45,60,0" VerticalAlignment="Top" Grid.Row="1" Grid.Column="2" Click="btnConPro_Click"/>
         <Button x:Name="btnSair" Content="SAIR" Grid.Column="2" Height="51" Margin="10,129.8,9.6,0" Grid.Row="1" VerticalAlignment="Top" Click="btnSair_Click"/>

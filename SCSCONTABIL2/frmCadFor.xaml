@@ -74,7 +74,7 @@
         <Label x:Name="label12" Content="Estado(UF):*" HorizontalAlignment="Left" Height="30" Margin="144,228.2,0,0" Grid.Row="1" VerticalAlignment="Top" Width="87"/>
         <TextBox x:Name="txtEst" HorizontalAlignment="Left" Height="17" CharacterCasing="Upper" Margin="246,228,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="366" Grid.ColumnSpan="2" FontSize="13.333" TabIndex="14"/>
         <Button x:Name="btnCadastrar" Content="CADASTRAR" Height="28" Margin="192,321,66,0" Grid.Row="1" VerticalAlignment="Top" Click="btnCadastrar_Click" TabIndex="15"/>
-        <Button x:Name="btnVoltar" Content="VOLTAR" Height="28" Margin="66,321,196,0" Grid.Row="1" VerticalAlignment="Top" Width="110" Grid.Column="1" Click="btnVoltar_Click" TabIndex="16"/>
+        <Button x:Name="btnVoltar" Content="VOLTAR" Height="28" Margin="66,321,192,0" Grid.Row="1" VerticalAlignment="Top" Grid.Column="1" Click="btnVoltar_Click" TabIndex="16"/>
         <Label x:Name="label13" Content="Todos os campos com * são obrigatórios" HorizontalContentAlignment="Center" Height="30" Margin="10,371.2,10,-36.4" Grid.Row="1" VerticalAlignment="Top" Grid.ColumnSpan="2"/>
         <Label x:Name="lblStatus" Grid.ColumnSpan="2" Content="" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Height="30" Margin="10,280,0,0" Grid.Row="1" VerticalAlignment="Top" Width="724"/>
 

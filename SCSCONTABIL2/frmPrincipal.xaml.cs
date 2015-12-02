@@ -89,11 +89,11 @@ namespace SCSCONTABIL2
 
         private void btnConFor_Click(object sender, RoutedEventArgs e)
         {
-            /*//Instância da classe frmConFor
+            //Instância da classe frmConFor
             frmConFor confor = new frmConFor();
             //mostra o form frmConFor e fecha esse
             confor.Show();
-            this.Close();*/
+            this.Close();
         }
 
         private void btnConPro_Click(object sender, RoutedEventArgs e)
@@ -117,6 +117,15 @@ namespace SCSCONTABIL2
             frmLogin login = new frmLogin();
             //mostra o form frmPrincipal e fecha esse
             login.Show();
+            this.Close();
+        }
+
+        private void btnConUsu_Click(object sender, RoutedEventArgs e)
+        {
+            //Instância da classe frmConUsu
+            frmConUsu conusu = new frmConUsu();
+            //mostra o form frmConUsu e fecha esse
+            conusu.Show();
             this.Close();
         }
     }

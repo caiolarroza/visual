@@ -96,6 +96,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="frmConFor.xaml.cs">
+      <DependentUpon>frmConFor.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="frmConUsu.xaml.cs">
+      <DependentUpon>frmConUsu.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Usuario.cs" />
     <Page Include="frmCadFor.xaml">
       <SubType>Designer</SubType>
@@ -109,7 +115,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="frmConFor.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="frmConProd.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="frmConUsu.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

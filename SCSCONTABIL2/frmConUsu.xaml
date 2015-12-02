@@ -1,0 +1,45 @@
+﻿<Window x:Class="SCSCONTABIL2.frmConUsu"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SCSCONTABIL2"
+        mc:Ignorable="d"
+        Title="CONSULTA DE USUÁRIO" Height="409" Width="969" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Grid Margin="0,0,0,-2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="258*"/>
+            <RowDefinition Height="53*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <DataGrid x:Name="dataGrid" Grid.Column="1" Margin="111,10,0,0" ItemsSource="{Binding}" VerticalAlignment="Top" Height="295" AutoGenerateColumns="False" IsReadOnly="True" HorizontalAlignment="Left" Width="360" TabIndex="14" MouseDoubleClick="dataGrid_MouseDoubleClick">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding Path=UsuCod}" Header="Código" />
+                <DataGridTextColumn Binding="{Binding Path=UsuNom}" Header="Nome" />
+                <DataGridTextColumn Binding="{Binding Path=UsuTip}" Header="Tipo" />
+            </DataGrid.Columns>
+        </DataGrid>
+        <Label x:Name="label" Content="Digite o nome do usuario:*" HorizontalAlignment="Left" Height="30" Margin="19,21,0,0" VerticalAlignment="Top" Width="178"/>
+        <TextBox x:Name="txtBusca" HorizontalAlignment="Left" Height="30" Margin="197,21,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250"/>
+        <Button x:Name="btnBus" Content="BUSCAR" HorizontalAlignment="Left" Height="30" Margin="0,21,0,0" VerticalAlignment="Top" Width="86" Grid.Column="1" Click="btnBus_Click"/>
+        <GroupBox x:Name="groupBox" Header="Dados do Usuário" HorizontalAlignment="Left" Height="239" Margin="19,66,0,0" VerticalAlignment="Top" Width="451" FontSize="13.333">
+            <ComboBox x:Name="cmbTipo" HorizontalAlignment="Left" Height="30" Margin="297,25,0,0" VerticalAlignment="Top" Width="103"/>
+        </GroupBox>
+        <Label x:Name="label1" Content="Código:*" HorizontalAlignment="Left" Height="30" Margin="44,116,0,0" VerticalAlignment="Top" Width="71"/>
+        <TextBox x:Name="txtCod" HorizontalAlignment="Left" Height="30" Margin="142,116,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="90"/>
+        <Label x:Name="label2" Content="Tipo:*" HorizontalAlignment="Left" Height="30" Margin="255,116,0,0" VerticalAlignment="Top" Width="52"/>
+        <Label x:Name="label3" Content="Nome:*" HorizontalAlignment="Left" Height="30" Margin="44,175,0,0" VerticalAlignment="Top" Width="59"/>
+        <TextBox x:Name="txtUsu" HorizontalAlignment="Left" Height="31" Margin="142,175,0,0" CharacterCasing="Upper" TextWrapping="Wrap" VerticalAlignment="Top" Width="288"/>
+        <Label x:Name="label4" Content="Senha:*" HorizontalAlignment="Left"  Height="30" Margin="44,234,0,0" VerticalAlignment="Top" Width="59"/>
+        <TextBox x:Name="txtSen" HorizontalAlignment="Left" Height="30" Margin="142,234,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="288"/>
+        <Button x:Name="btnDel" Content="EXCLUIR" HorizontalAlignment="Left" Height="30" Margin="0,182,0,0" VerticalAlignment="Top" Width="86" Grid.Column="1" Click="btnDel_Click"/>
+        <Button x:Name="btnVol" Content="VOLTAR" HorizontalAlignment="Left" Height="30" Margin="0,224,0,0" VerticalAlignment="Top" Width="86" Grid.Column="1" Click="btnVol_Click"/>
+        <Button x:Name="btnAlt" Content="ALTERAR" HorizontalAlignment="Left" Height="30" Margin="0,140,0,0" VerticalAlignment="Top" Width="86" Grid.Column="1" Click="btnAlt_Click"/>
+        <Label x:Name="lblStatus" Content="" HorizontalAlignment="Left" Height="29" Margin="303,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="352" Grid.ColumnSpan="2"/>
+        <Label x:Name="label2_Copy" Content="Todos os campos com * são obrigatórios" Grid.Column="1" HorizontalAlignment="Left" Height="35" Margin="190,10,0,0" Grid.Row="1" VerticalAlignment="Top" Width="257"/>
+
+    </Grid>
+</Window>
